@@ -67,10 +67,11 @@ def run_turn(user_id: str, user_message: str) -> str:
     for _ in range(MAX_TOOL_ROUNDS):
         resp = client.messages.create(
             model=MODEL,
-            max_tokens=4096,
+            max_tokens=1024,
             system=system,
             tools=TOOLS,
             messages=messages,
+            cache_control={"type": "ephemeral"},
         )
 
         if resp.stop_reason == "tool_use":
