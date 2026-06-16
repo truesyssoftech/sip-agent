@@ -1,10 +1,16 @@
 # Required
+# Provider to use: ANTHROPIC or OPENROUTER
+PROVIDER=ANTHROPIC
+
+# API keys — add the key for whichever PROVIDER(s) you use
 ANTHROPIC_API_KEY=
-TELEGRAM_BOT_TOKEN=
+# OPENROUTER_API_KEY=
 
 # Optional (web context). The agent works without these — it just won't pull live news.
 TAVILY_API_KEY=tvly-xxxxxxxxxxxxxxxxx
-FIRECRAWL_API_KEY=fc-xxxxxxxxxxxxxxxxx
+# FIRECRAWL_API_KEY=fc-xxxxxxxxxxxxxxxxx
 
-# Optional overrides
-CLAUDE_MODEL=claude-sonnet-4-6
+# Model name (must be valid for the selected PROVIDER)
+# Anthropic example : claude-haiku-4-5-20251001 , claude-sonnet-4-5 , claude-opus-4-5
+# OpenRouter example: anthropic/claude-3.5-sonnet , openai/gpt-4o , google/gemini-pro
+MODEL=claude-haiku-4-5-20251001
