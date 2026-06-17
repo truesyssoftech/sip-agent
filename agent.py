@@ -158,7 +158,7 @@ def _run_openrouter(system: str, messages: list, tools: list):
         finish = choice.finish_reason
         msg = choice.message
 
-        if finish == "tool_calls" and msg.tool_calls:
+        if msg.tool_calls:
             # Append assistant turn
             oai_messages.append({"role": "assistant", "content": msg.content or "", "tool_calls": [
                 {
@@ -355,7 +355,7 @@ def _run_turn_openrouter(system: str, messages: list, user_id: str) -> str:
         choice = resp.choices[0]
         msg = choice.message
 
-        if choice.finish_reason == "tool_calls" and msg.tool_calls:
+        if msg.tool_calls:
             # Append assistant turn to context
             oai_messages.append({
                 "role": "assistant",
